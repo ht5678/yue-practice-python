@@ -5,7 +5,6 @@ import cv2
 
 if __name__ == '__main__':
     src = cv2.imread("d://pics/131313.jpg");
-
     src=cv2.cvtColor(src, cv2.COLOR_BGR2HSV);
 
     channels = [0];
@@ -15,6 +14,7 @@ if __name__ == '__main__':
     histSize = [50];
 
     print(ranges);
+
 
     histBase = cv2.calcHist([src], channels, None, histSize, [0, 256]);
     cv2.normalize(histBase, histBase, 0, 1, cv2.NORM_MINMAX, -1, None);
